@@ -35,7 +35,15 @@ public final class Board extends JPanel{
 		this.setLayout(new FlowLayout(FlowLayout.LEFT, 0, 0));
                 
 		/*to set subImage on the board*/
-		for(int i=0; i<dimension; i++){
+		settingSubImage(puzzle);
+		RandomBoard();
+		
+		remover();
+		
+	}
+	
+	    public void settingSubImage(BufferedImage puzzle){
+            for(int i=0; i<dimension; i++){
 			for(int j=0; j<dimension; j++){
 				if(i == dimension-1 && j == dimension-1 ){//(dimesion-1) removing last index			
 					continue;
@@ -47,11 +55,8 @@ public final class Board extends JPanel{
 			x = 0;
 			y += figureHeight;
 		}
-		RandomBoard();
-		
-		remover();
-		
-	}
+        }
+	
         /*Randomly set the subImages on the board*/
 	public void RandomBoard(){
 		
